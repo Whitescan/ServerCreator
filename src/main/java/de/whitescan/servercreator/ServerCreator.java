@@ -87,7 +87,7 @@ public class ServerCreator {
 		}
 		
 		case 2: {
-			Setup.RAM = Integer.valueOf(input);
+			Setup.RAM = Integer.valueOf(input) * 1024;
 			Logger.info("Please enter which template you want to use");
 		}
 
@@ -158,8 +158,8 @@ public class ServerCreator {
 			out.close();
 
 			String jvmFlags = new String(Files.readAllBytes(jvmFlagsFile.toPath()));
-			jvmFlags = jvmFlags.replace("-Xms6G", "-Xms" + Setup.RAM + "G");
-			jvmFlags = jvmFlags.replace("-Xmx6G", "-Xms" + Setup.RAM + "G");
+			jvmFlags = jvmFlags.replace("-Xms", "-Xms" + Setup.RAM + "M");
+			jvmFlags = jvmFlags.replace("-Xmx", "-Xms" + Setup.RAM + "M");
 			Files.write(jvmFlagsFile.toPath(), jvmFlags.getBytes(StandardCharsets.UTF_8));
 
 			YamlConfiguration paperGlobalConfig = YamlConfiguration.loadConfiguration(paperGlobalFile);
