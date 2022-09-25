@@ -89,6 +89,7 @@ public class ServerCreator {
 		case 2: {
 			Setup.RAM = Integer.valueOf(input) * 1024;
 			Logger.info("Please enter which template you want to use");
+			break;
 		}
 
 		case 3: {
