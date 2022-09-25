@@ -82,12 +82,17 @@ public class ServerCreator {
 
 		case 1: {
 			Setup.SERVER_NAME = input;
-			Logger.info("Please enter the amount of RAM in GB (remember docker needs 1GB for itself!)");
+			Logger.info("Please enter the amount of RAM in GB");
 			break;
 		}
-
+		
 		case 2: {
 			Setup.RAM = Integer.valueOf(input);
+			Logger.info("Please enter which template you want to use");
+		}
+
+		case 3: {
+			Setup.TEMPLATE = input;
 			Logger.info("All right beginning to export...");
 			build();
 			Logger.info("Done!");
