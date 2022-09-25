@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Properties;
+import java.util.UUID;
 
 import org.apache.commons.io.FileUtils;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -170,6 +171,10 @@ public class ServerCreator {
 			YamlConfiguration purpurConfig = YamlConfiguration.loadConfiguration(purpurFile);
 			purpurConfig.set("settings.server-mod-name", Setup.SERVER_NAME);
 			purpurConfig.save(purpurFile);
+			
+			YamlConfiguration bStatsConfig = YamlConfiguration.loadConfiguration(bStatsFile);
+			bStatsConfig.set("serverUuid", UUID.randomUUID().toString());
+			bStatsConfig.save(bStatsFile);
 
 		} catch (Exception e) {
 			e.printStackTrace();
