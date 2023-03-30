@@ -19,7 +19,7 @@ import de.whitescan.servercreator.setup.Setup;
 import lombok.Getter;
 
 /**
- * 
+ *
  * @author Whitescan
  *
  */
@@ -86,7 +86,7 @@ public class ServerCreator {
 			Logger.info("Please enter the amount of RAM in GB");
 			break;
 		}
-		
+
 		case 2: {
 			Setup.RAM = Integer.valueOf(input) * 1024;
 			Logger.info("Please enter which template you want to use");
@@ -171,7 +171,7 @@ public class ServerCreator {
 			YamlConfiguration purpurConfig = YamlConfiguration.loadConfiguration(purpurFile);
 			purpurConfig.set("settings.server-mod-name", Setup.SERVER_NAME);
 			purpurConfig.save(purpurFile);
-			
+
 			YamlConfiguration bStatsConfig = YamlConfiguration.loadConfiguration(bStatsFile);
 			bStatsConfig.set("serverUuid", UUID.randomUUID().toString());
 			bStatsConfig.save(bStatsFile);

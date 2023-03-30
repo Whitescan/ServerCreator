@@ -1,7 +1,7 @@
 package de.whitescan.servercreator.setup;
 
 /**
- * 
+ *
  * @author Whitescan
  *
  */
